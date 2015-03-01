@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+        <TextView
+            android:id="@+id/string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="String"/>
+        <EditText
+            android:id="@+id/edit_string"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/string"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+        <TextView
+            android:id="@+id/integer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Integer"/>
+        <EditText
+            android:id="@+id/edit_integer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/integer"
+            android:numeric="integer"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/bool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Boolean"
+            android:layout_gravity="center"/>
+
+        <RadioGroup
+            android:id="@+id/edit_boolean"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/radio_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="true"
+                android:paddingRight="50dp"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/radio_false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="false"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="50dp">
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="save"/>
+
+        <Button
+            android:id="@+id/load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="load"/>
+
+        <Button
+            android:id="@+id/erase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="erase"/>
+    </LinearLayout>
+</LinearLayout>
