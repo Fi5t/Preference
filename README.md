@@ -11,19 +11,21 @@ Preference is a little library that allows you to work with shared preferences v
 ```groovy
 repositories {
     maven {
-        url "https://oss.sonatype.org/content/repositories/central_bundles-3532"
+        url "https://oss.sonatype.org/content/repositories/central_bundles-3547"
     }
 }
 
 dependencies {
-    compile 'ru.freedomlogic:preference:0.1@aar'
+    compile 'ru.freedomlogic:preference:0.2@aar'
 }
 ```
+
+Import `ru.freedomlogic.preference.*` to use Preference DSL in your classes.
 
 ## Usage
 Editing shared preferences
 ```kotlin
-	preferencesEditor(this,
+	preferencesEditor(
 		"server"  to "http://github.com"
 		"port"    to 80
 	)
@@ -33,7 +35,7 @@ Reading shared preferences
 ```kotlin
 	val remoteHost = RemoteHost()
 
-	preferences(this) {
+	preferences {
 		with(remoteHost) {
 			server = getString("server")
 			port   = getInt("port")
