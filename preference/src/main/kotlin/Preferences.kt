@@ -22,3 +22,6 @@ public fun SharedPreferences.getBoolean(key: String, defValue: Boolean = false):
 
 public fun preferences(context: Context, init: SharedPreferences.() -> Unit = defaultInit): SharedPreferences
     = processPreferences(PreferenceManager.getDefaultSharedPreferences(context), init)
+
+public fun SharedPreferences.onChanged(listener: (SharedPreferences?, key:String?) -> Unit): Unit
+        = registerOnSharedPreferenceChangeListener(listener)

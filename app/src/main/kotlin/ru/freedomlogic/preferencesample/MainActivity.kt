@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import ru.freedomlogic.preference.*
 import android.widget.Button
+import android.widget.Toast
 
 
 public class MainActivity : ActionBarActivity() {
@@ -25,6 +26,12 @@ public class MainActivity : ActionBarActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        preferences(this) {
+            onChanged { (_, key) ->
+                Toast.makeText(getApplicationContext(), "Key: ${key}", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         saveButton.setOnClickListener {
             preferencesEditor(this,

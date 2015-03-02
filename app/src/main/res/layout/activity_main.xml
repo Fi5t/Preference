@@ -19,7 +19,8 @@
             android:id="@+id/edit_string"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/string"/>
+            android:layout_alignRight="@id/string"
+            android:text="simple string"/>
     </LinearLayout>
 
     <LinearLayout
@@ -36,7 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignRight="@id/integer"
-            android:numeric="integer"/>
+            android:numeric="integer"
+            android:text="12345"/>
     </LinearLayout>
 
     <LinearLayout
