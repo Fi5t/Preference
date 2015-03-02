@@ -16,7 +16,13 @@ public fun preferencesEditor (context: Context, vararg pairs: Pair<String, Any>)
     for ((key, value) in pairs) {
         when (value) {
             is String -> editor.putString(key, value)
-            is Set<*> -> editor.putStringSet(key, value as HashSet<String>)
+            is Set<*> -> {
+                if (!value.all { it is String }) {
+                    throw IllegalArgumentException("Only Set<String> is supported")
+                }
+                [suppress("UNCHECKED_CAST")]
+                editor.putStringSet(key, value as Set<String>)
+            }
             is Int -> editor.putInt(key, value)
             is Long -> editor.putLong(key, value)
             is Float -> editor.putFloat(key, value)
