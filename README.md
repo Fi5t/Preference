@@ -10,9 +10,7 @@ Preference is a little library that allows you to work with shared preferences v
 ## Including in your project
 ```groovy
 repositories {
-    maven {
-        url "https://oss.sonatype.org/content/repositories/central_bundles-3547"
-    }
+    mavenCentral()
 }
 
 dependencies {
