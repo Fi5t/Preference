@@ -5,7 +5,7 @@ apply plugin: 'signing'
 
 group = "ru.freedomlogic"
 archivesBaseName = "preference"
-version = "0.1"
+version = "0.2"
 
 configurations {
     archives {
@@ -26,7 +26,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 21
         versionCode 1
-        versionName "0.1"
+        versionName "0.2"
     }
     buildTypes {
         release {

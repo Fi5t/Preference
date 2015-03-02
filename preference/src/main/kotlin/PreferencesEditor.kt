@@ -10,8 +10,8 @@ public fun SharedPreferences.Editor.erase() {
     apply()
 }
 
-public fun preferencesEditor (context: Context, vararg pairs: Pair<String, Any>): SharedPreferences.Editor {
-    val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
+public fun Context.preferencesEditor (vararg pairs: Pair<String, Any>): SharedPreferences.Editor {
+    val editor = PreferenceManager.getDefaultSharedPreferences(this).edit()
 
     for ((key, value) in pairs) {
         when (value) {
@@ -31,7 +31,7 @@ public fun preferencesEditor (context: Context, vararg pairs: Pair<String, Any>)
         }
     }
 
-    (pairs.size() > 0) let { editor.apply() }
+    if (pairs.size() > 0) editor.apply()
 
     return editor
 }

@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import ru.freedomlogic.preference.*
 import android.widget.Button
+import android.widget.Toast
 
 
 public class MainActivity : ActionBarActivity() {
@@ -26,8 +27,14 @@ public class MainActivity : ActionBarActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        preferences {
+            onChanged { (_, key) ->
+                Toast.makeText(getApplicationContext(), "Key: ${key}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         saveButton.setOnClickListener {
-            preferencesEditor(this,
+            preferencesEditor(
                     "string"  to stringEdit.getText().toString(),
                     "integer" to integerEdit.getText().toString().toInt(),
                     "boolean" to if (radioTrue.isChecked()) true else false
@@ -35,7 +42,7 @@ public class MainActivity : ActionBarActivity() {
         }
 
         loadButton.setOnClickListener {
-            preferences(this) {
+            preferences {
                 stringEdit.setText(getString("string"))
                 integerEdit.setText(getInt("integer").toString())
 
@@ -47,9 +54,9 @@ public class MainActivity : ActionBarActivity() {
         }
 
         eraseButton.setOnClickListener {
-            preferencesEditor(this).erase()
-            stringEdit.setText("")
-            integerEdit.setText("")
+            preferencesEditor().erase()
+            stringEdit.setText("simple string")
+            integerEdit.setText("12345")
             radioTrue.setChecked(true)
         }
     }
