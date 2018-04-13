@@ -1,4 +1,4 @@
-Preference
+Preference[Deprecated]
 ===========
 ![](logo.png)
 
